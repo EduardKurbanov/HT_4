@@ -7,7 +7,7 @@ def variable_value_function(arg_1):
     if float(arg_1) > 0:
         print("squaring a number {0}^2 -> {1}".format(arg_1, arg_1 ** 2))
     elif float(arg_1) < 0:
-        print("increase the number {0} by 100 -> {1}".format(arg_1, arg_1 - 100))
+        print("increase the number {0} by 100 -> {1}".format(arg_1, arg_1 + 100))
     elif float(arg_1) == 0:
         print("you entered {0} will remain {0}".format(arg_1))
     else:

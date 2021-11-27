@@ -13,7 +13,7 @@ def list_counter(*arg_1):
 while True:
     try:
         print("input through ','")
-        arg_list_in = list(input("enter the side of the square : ").split(","))
+        arg_list_in = list(input("enter any number of characters: ").split(","))
         # arg_list_in = [1,1,1,2,"*","*","k","k"]
         list_counter(arg_list_in)
 

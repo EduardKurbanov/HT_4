@@ -33,8 +33,10 @@ def array_shift(args, shift=1):
 
 while True:
     try:
-        arg_list = list(input("enter the side of the square : ").split(","))
-        arg_shiht = int(input("enter the side of the square_1: "))
+        print("input through ','")
+        arg_list = list(input("enter list: ").split(","))
+        # arg_list = [1, 2, 3, 4, 5]
+        arg_shiht = int(input("enter the shift of the array: "))
         array_shift(arg_list, arg_shiht)
 
         print("*" * 57)
