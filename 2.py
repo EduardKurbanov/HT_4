@@ -8,8 +8,8 @@
 """
 
 
-def bank(arg_money, arg_years, arg_percent):
-    if (arg_money > 0) and (arg_years > 0) and (100 >= float(arg_percent) >= 10):
+def bank(arg_money, arg_years, arg_percent=10.0):
+    if (float(arg_money) > 0) and (int(arg_years) > 0) and (100 >= float(arg_percent) >= 10):
         arg_percent_p = float(arg_percent) / 100.0
         for i in range(1, arg_years + 1):
             arg_money_d = arg_money * arg_percent_p
@@ -20,16 +20,18 @@ def bank(arg_money, arg_years, arg_percent):
 
 
 while True:
-    # try:
+    try:
         print("deposit account:")
-        arg_money = float(input("enter funds: "))
-        arg_years = int(input("enter the deposit for how many full years: "))
+        arg_money = input("enter funds: ")
+        arg_years = input("enter the deposit for how many full years: ")
         arg_percent = input("enter a percentage rate of at least 10%: ")
-        print(type(arg_percent))
-        if arg_percent in (0, 0.0, "", " ", None) or float(arg_percent) <= 10.0:
-            arg_percent = 10.0
 
-        bank(arg_money, arg_years, arg_percent)
+        if arg_percent in (0, 0.0, "", " ", None):
+            bank(float(arg_money), int(arg_years))
+        elif float(arg_percent) >= 10.0 and int(arg_years) > 0 and float(arg_money) > 0:
+            bank(float(arg_money), int(arg_years), float(arg_percent))
+        else:
+            continue
 
         print("*" * 57)
         yes = input('if you want to leave the program press "Y" if not then "N": ')
@@ -38,5 +40,5 @@ while True:
             break
         else:
             continue
-    # except:
-    #     print("error")
+    except:
+        print("error")
