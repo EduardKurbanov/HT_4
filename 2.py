@@ -9,7 +9,7 @@
 
 
 def bank(arg_money, arg_years, arg_percent=10.0):
-    if (float(arg_money) > 0) and (int(arg_years) > 0) and (100 >= float(arg_percent) >= 10):
+    if (float(arg_money) > 0) and (int(arg_years) > 0) and (100 >= float(arg_percent) >= 0):
         arg_percent_p = float(arg_percent) / 100.0
         for i in range(1, arg_years + 1):
             arg_money_d = arg_money * arg_percent_p
